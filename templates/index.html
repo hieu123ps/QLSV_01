@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "head.html" %}
+</head>
+<body>
+
+{% include "navbar.html" %}
+
+<section class="py-1">
+    <div class="row mt-5">
+        <div class="col-lg-8 offset-lg-2">
+            <h3>Quản lí điểm danh</h3>
+            <hr>
+
+            <div class="row">
+                <div class="col-lg-3">
+                    <a href="/addprsn" type="button" class="btn btn-success btn-lg"><b>Thêm sv</b></a>
+                </div>
+
+                <div class="col-lg-3">
+                    <a href="/fr_page" type="button" class="btn btn-info btn-lg"><b>Điểm danh</b></a>
+                </div>
+                <div class="col-lg-3">
+                    <a href="/exportExcel" type="button" class="btn btn-warning btn-lg"><b>Trích xuất</b></a>
+                </div>
+                <div class="col-lg-3">
+                    <a href="/exportExcel" type="button" class="btn btn-danger btn-lg"><b>Làm mới</b></a>
+                </div>
+            </div>
+
+            <br>
+            <table class="table" style="width: 100%">
+                <thead>
+                    <tr>
+                        <th>MSV</th>
+                        <th>Tên SV</th>
+                        <th>Lớp</th>
+                        <th>Trạng thái</th>
+                        <th>Ngày thêm</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in data %}
+                        <tr>
+                            <td>{{item[0]}}</td>
+                            <td>{{item[1]}}</td>
+                            <td>{{item[2]}}</td>
+                            <td>{{item[3]}}</td>
+                            <td>{{item[4]}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
